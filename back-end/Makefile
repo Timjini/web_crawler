@@ -1,2 +1,5 @@
+APP_ENTRY := cmd/api/main.go
+
+.PHONY: run
 run:
-	go run cmd/api/main.go
+	go run $(APP_ENTRY)

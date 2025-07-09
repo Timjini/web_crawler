@@ -1,0 +1,45 @@
+version: "3.9"
+
+services:
+  postgres:
+    container_name: web_crawler_postgres
+    image: postgres:15
+    restart: always
+    env_file:
+      - .env.development
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    container_name: web_crawler_backend
+    build:
+      context: ./back-end
+    command: make run
+    volumes:
+      - ./back-end:/app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    env_file:
+      - .env.development
+
+  frontend:
+    container_name: web_crawler_frontend
+    build:
+      context: ./front-end
+    command: npm run dev
+    volumes:
+      - ./front-end:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    env_file:
+      - .env.development
+
+volumes:
+  pgdata:
