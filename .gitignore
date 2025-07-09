@@ -1,0 +1,85 @@
+# Root .gitignore for monorepo
+**/.DS_Store
+**/.idea
+**/.vscode
+**/*.log
+**/node_modules
+**/dist
+**/build
+**/.env
+**/.env.local
+**/.env*.local
+
+# Binaries
+**/bin
+**/exe
+
+# Dependency directories
+**/vendor/
+
+# Go specific
+**/*.exe
+**/*.exe~
+**/*.dll
+**/*.so
+**/*.dylib
+**/debug/
+**/coverage/
+**/*.test
+**/*.out
+**/go.sum
+
+# React/Vite specific
+**/node_modules
+**/.svelte-kit
+**/.vercel
+**/.netlify
+**/.cache
+**/dist
+**/dist-ssr
+**/*.local
+**/package-lock.json
+**/yarn.lock
+**/pnpm-lock.yaml
+
+# Editor directories and files
+**/.swp
+**/*.swp
+**/*.swo
+**/*~ 
+
+# System Files
+**/Thumbs.db
+**/ehthumbs.db
+**/Desktop.ini
+
+# Debug files
+**/*.pid
+**/*.seed
+**/*.pid.lock
+
+# Coverage directory
+**/coverage
+**/.nyc_output
+
+# Logs
+**/logs
+**/*.log
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/lerna-debug.log*
+**/.pnpm-debug.log*
+
+# Local development files
+**/.env.local
+**/.env.development.local
+**/.env.test.local
+**/.env.production.local
+
+# Vite cache
+**/.vite
+
+# Optional monorepo management files
+**/lerna.json
+**/pnpm-workspace.yaml
