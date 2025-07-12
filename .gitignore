@@ -83,3 +83,8 @@
 # Optional monorepo management files
 **/lerna.json
 **/pnpm-workspace.yaml
+
+**/*.env
+.env.production
+.env.development
+.env.test
